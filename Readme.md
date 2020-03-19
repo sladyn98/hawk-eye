@@ -16,4 +16,9 @@ PRs accepted.
 
 git clone git@github.com:sladyn98/hawk-eye.git
 You can now run `make` to build the project, or `make install` to install the binary in $GOPATH/bin/.
-To work on the web UI, have a look at the dedicated Readme.
+
+## To-DO
+
+a) Enable commands to get the CI status from Github Actions. eg: `hawk-eye getCIStatus` which would then return a one or zero enabling users to combine it with different steps like `hawk-eye getCIStatus && npm publish`.
+
+b) Enable Travis CI status support.
