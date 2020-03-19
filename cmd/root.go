@@ -12,15 +12,14 @@ const rootCommandName = "hawk-eye"
 var cfgFile string
 
 // RootCmd represents the base command when called without any subcommands
-var RootCmd = &cobra.Command {
+var RootCmd = &cobra.Command{
 	Use:   rootCommandName,
 	Short: "A  CLI Status Reporter for Github Action Statuses.",
 	Long: `hawk-eye is a continuous integration status reporter built to watch over
 	the Github CI statuses`,
 
 	Run: func(cmd *cobra.Command, args []string) {
-		if err := cmd.Help(); 
-		err != nil {
+		if err := cmd.Help(); err != nil {
 			os.Exit(1)
 		}
 	},
@@ -39,19 +38,18 @@ _hawk_eye() {
 
 // Execute is used to execute the run command and is called by default
 func Execute() {
-	if err := RootCmd.Execute();
-	err != nil {
+	if err := RootCmd.Execute(); err != nil {
 		os.Exit(1)
 	}
 }
 
 func init() {
-	
+
 	cobra.OnInitialize(initConfig)
 	RootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cobra.yaml)")
 	RootCmd.PersistentFlags().Bool("viper", true, "use Viper for configuration")
 }
 
 func initConfig() {
-	
+
 }
