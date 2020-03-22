@@ -106,7 +106,7 @@ func LoginAndRequestToken(login, owner, project string) (string, error) {
 	}
 
 	// Attempt to authenticate and create a token
-	note := fmt.Sprintf("git-bug - %s/%s", owner, project)
+	note := fmt.Sprintf("hawk-eye - %s/%s", owner, project)
 	resp, err := requestToken(note, login, password, scope)
 	if err != nil {
 		return "", err
