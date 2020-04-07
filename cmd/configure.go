@@ -2,8 +2,9 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/sladyn98/hawk-eye/github"
 
+	"github.com/boltdb/bolt"
+	"github.com/sladyn98/hawk-eye/github"
 	"github.com/spf13/cobra"
 )
 
@@ -29,7 +30,25 @@ var configureCmd = &cobra.Command{
 			return err
 		}
 
-		fmt.Println("Your new token is", value)
+		//Storing the token
+		github.NewToken(value)
+
+		// Persisting the project-name and token
+		db, err := bolt.Open("hawk.db", 0600, nil)
+		if err != nil {
+			return err
+		}
+		fmt.Println("Hawk-eye is preparing to write into database", project, value)
+		db.Update(func(tx *bolt.Tx) error {
+			b, err := tx.CreateBucketIfNotExists([]byte("tokens"))
+			if err != nil {
+				fmt.Println("The token for the project already exists")
+				return err
+			}
+			return b.Put([]byte(project), []byte(value))
+		})
+		defer db.Close()
+		fmt.Println("Successfully wrote into database")
 		return nil
 	},
 }
