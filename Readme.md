@@ -8,6 +8,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3+-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 ![Go](https://github.com/sladyn98/hawk-eye/workflows/Go/badge.svg?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/sladyn98/hawk-eye)](https://goreportcard.com/report/github.com/sladyn98/hawk-eye)
+[![Build Status](https://travis-ci.org/sladyn98/hawk-eye.svg?branch=master)](https://travis-ci.org/sladyn98/hawk-eye)
 
 hawk-eye is a continuous integration status reporter built to watch over the Github CI statuses.
 
