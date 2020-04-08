@@ -8,7 +8,7 @@ import (
 )
 
 func TestGetCIStatus(t *testing.T) {
-	got, err := getCIStatus("configuration-as-code", "jenkinsci")
+	got, err := getCIStatus("hawk-eye", "sladyn98","","450f8716451a212ef62b6ce3c66b10d4129271a3","")
 	if(err != nil) {
 		fmt.Println(err)
 	}
