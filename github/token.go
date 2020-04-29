@@ -12,6 +12,6 @@ type Token struct {
 // NewToken instantiate a new token
 func NewToken(value string) *Token {
 	return &Token{
-		Value:          value,
+		Value: value,
 	}
 }
