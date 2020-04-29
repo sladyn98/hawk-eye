@@ -9,6 +9,7 @@
 ![Go](https://github.com/sladyn98/hawk-eye/workflows/Go/badge.svg?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/sladyn98/hawk-eye)](https://goreportcard.com/report/github.com/sladyn98/hawk-eye)
 [![Build Status](https://travis-ci.org/sladyn98/hawk-eye.svg?branch=master)](https://travis-ci.org/sladyn98/hawk-eye)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/sladyn98/hawk-eye)
 
 hawk-eye is a continuous integration status reporter built to watch over the Github CI statuses.
 
