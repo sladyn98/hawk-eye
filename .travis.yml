@@ -1,23 +1,12 @@
-# use the latest ubuntu environment (18.04) available on travis
-dist: bionic
-
 language: go
+dist: trusty
 
-# Force-enable Go modules. Also force go to use the code in vendor/
-# The first two envs will be unnecessary when Go 1.14 lands.
-# LINTER_VERSION is the version of golangci-lint. See current releases
-# here:
-#   https://github.com/golangci/golangci-lint/releases
-env: GO111MODULE=on GOFLAGS='-mod vendor'
+go:
+- 1.12.x
 
-# You don't need to test on very old versions of the Go compiler. It's the user's
-# responsibility to keep their compiler up to date.
-go: stable
-
-
-# Skip the install step. Don't `go get` dependencies. Only build with the code
-# in vendor/
-install: true
+env:
+  global:
+    - GO111MODULE=on
 
 # Don't email me the results of the test runs.
 notifications:
