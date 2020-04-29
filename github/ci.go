@@ -87,11 +87,10 @@ func getCIStatus(githubURLEndpoint string, projectName string, owner string, bra
 		conclusion := ciS.CiStatuses[i].Conclusion
 		appName := ciS.CiStatuses[i].App.Slug
 		fmt.Printf("%s: %s\n", appName, conclusion)
-		if conclusion == "action_required" || conclusion == "canceled" || conclusion == "timed_out" ||
-			conclusion == "failed" {
-			failCount++
-		} else {
+		if conclusion == "success" {
 			successCount++
+		} else {
+			failCount++
 		}
 	}
 
