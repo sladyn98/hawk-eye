@@ -1,7 +1,6 @@
 package github
 
 import (
-	// "fmt"
 	"github.com/magiconair/properties/assert"
 	"net/http"
 	"net/http/httptest"
@@ -32,11 +31,3 @@ func TestGetCIStatus(t *testing.T) {
 	}
 	assert.Equal(t, got, "true")
 }
-
-// func TestGetCIStatus(t *testing.T) {
-// 	got, err := getCIStatus("https://api.github.com", "hawk-eye", "sladyn98","","f0496ae48d0f21ccc0ef23502ccea96dd68c7938","")
-// 	if(err != nil) {
-// 		fmt.Println(err)
-// 	}
-// 	assert.Equal(t, got, "true")
-// }
