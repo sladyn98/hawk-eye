@@ -28,7 +28,7 @@ var RootCmd = &cobra.Command{
 	DisableAutoGenTag: true,
 
 	// Custom bash code to connect the git completion for "hawk-eye" to the
-	// git-bug completion for "hawk-eye"
+	// hawk-eye completion for "hawk-eye"
 	BashCompletionFunction: `
 _hawk_eye() {
     __start_hawk-eye "$@"
